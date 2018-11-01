@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2018 at 03:32 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 7.2.5
+-- Generation Time: Nov 01, 2018 at 11:27 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -52,7 +52,9 @@ INSERT INTO `inventory` (`record_id`, `product_id`, `quantity`, `status`, `regDa
 (9, 3, 5, 'ACTIVE', '2018-08-30 22:45:18'),
 (10, 3, 12, 'ACTIVE', '2018-08-30 23:27:05'),
 (11, 3, 12, 'ACTIVE', '2018-08-30 23:28:43'),
-(12, 3, 1, 'ACTIVE', '2018-08-30 23:34:09');
+(12, 3, 1, 'ACTIVE', '2018-08-30 23:34:09'),
+(13, 5, 12, 'ACTIVE', '2018-11-01 09:15:07'),
+(14, 4, 12, 'ACTIVE', '2018-11-01 09:18:28');
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,9 @@ CREATE TABLE `inventory_logs` (
 INSERT INTO `inventory_logs` (`log_id`, `log_date`, `user_id`, `activity`, `status`, `regDate`) VALUES
 (1, '2018/08/31', 6, ' has added a new MDF to stock with quantity12', 'UNREAD', '2018-08-30 23:27:05'),
 (2, '2018/08/31', 6, ' has added a new MDF to stock with quantity 12', 'UNREAD', '2018-08-30 23:28:43'),
-(3, '2018/08/31', 6, 'John Karim has added a new MDF to stock with quantity 1', 'UNREAD', '2018-08-30 23:34:09');
+(3, '2018/08/31', 6, 'John Karim has added a new MDF to stock with quantity 1', 'UNREAD', '2018-08-30 23:34:09'),
+(4, '2018/11/01', 6, 'John Karim has added a new MDF-DOOR to stock with quantity 12', 'UNREAD', '2018-11-01 09:15:07'),
+(5, '2018/11/01', 6, 'John Karim has added a new PLACARI to stock with quantity 12', 'UNREAD', '2018-11-01 09:18:28');
 
 -- --------------------------------------------------------
 
@@ -118,6 +122,31 @@ CREATE TABLE `raw_materials` (
   `status` varchar(50) NOT NULL,
   `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suppliers`
+--
+
+CREATE TABLE `suppliers` (
+  `supplier_id` int(100) NOT NULL,
+  `names` varchar(1024) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tin` varchar(100) NOT NULL,
+  `address` text NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `suppliers`
+--
+
+INSERT INTO `suppliers` (`supplier_id`, `names`, `email`, `tin`, `address`, `phone`, `status`, `regDate`) VALUES
+(1, 'John Karim', 'sam@gmail.com', '123455', 'kigali', '1234567890', '', '2018-08-31 07:43:53'),
+(2, 'Nkusi Godfrey', 'nkusi@gmail.com', '122390', 'kigali/Rwanda', '0788998877', 'ACTIVE', '2018-08-31 07:45:18');
 
 -- --------------------------------------------------------
 
@@ -240,6 +269,12 @@ ALTER TABLE `raw_materials`
   ADD PRIMARY KEY (`record_id`);
 
 --
+-- Indexes for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  ADD PRIMARY KEY (`supplier_id`);
+
+--
 -- Indexes for table `system_logs`
 --
 ALTER TABLE `system_logs`
@@ -271,13 +306,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `record_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `record_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `inventory_logs`
 --
 ALTER TABLE `inventory_logs`
-  MODIFY `log_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `log_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `items_categories`
@@ -290,6 +325,12 @@ ALTER TABLE `items_categories`
 --
 ALTER TABLE `raw_materials`
   MODIFY `record_id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  MODIFY `supplier_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `system_logs`
