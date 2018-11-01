@@ -1,0 +1,11 @@
+<!-- Javascript -->
+<script type="text/javascript" src="assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/js/animsition.js"></script>
+<script type="text/javascript" src="assets/js/plugins.js"></script>
+<script type="text/javascript" src="assets/js/countTo.js"></script>
+<script type="text/javascript" src="assets/js/fitText.js"></script>
+<script type="text/javascript" src="assets/js/flexslider.js"></script>
+<script type="text/javascript" src="assets/js/vegas.js"></script>
+<script type="text/javascript" src="assets/js/cube.portfolio.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
