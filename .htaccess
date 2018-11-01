@@ -1,0 +1,22 @@
+# Turn Rewrite Engine On
+RewriteEngine on
+RewriteRule ^forbidden$ App/Views/Utils/403.php [NC,L]
+# Rewrite for login script
+RewriteRule ^access$ App/Views/Login/access_system.php [NC,L]
+RewriteRule ^login$ App/Views/Login/login_request.php [NC,L]
+RewriteRule ^logout$ App/Views/Login/log_user_out.php [NC,L]
+RewriteRule ^dashboard$ index.php [NC,L]
+
+RewriteRule ^users$ system_users.php [NC,L]
+
+RewriteRule ^categories$ items_categories.php [NC,L]
+RewriteRule ^save_category$ App/Views/Category/save_category.php [NC,L]
+
+RewriteRule ^purchases$ system_purchase.php [NC,L]
+RewriteRule ^stock$ system_stock.php [NC,L]
+
+RewriteRule ^reports$ system_report.php [NC,L]
+
+RewriteRule ^suppliers$ system_suppliers.php [NC,L]
+
+RewriteRule ^invoice$ system_invoice.php [NC,L]
