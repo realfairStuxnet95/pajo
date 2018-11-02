@@ -49,7 +49,7 @@
 
                     <div class="cbp-item">
                         <div class="service-item clearfix">
-                            <div class="thumb"><img src="assets/img/services/1.jpg" alt="image" /></div>
+                            <div class="thumb"><img src="assets/img/home/offer.jpg" alt="image" /></div>
                             <div class="service-item-wrap">
                                 <h3 class="title font-size-18"><a href="#">Design & Construction</a></h3>
                                 <p class="desc">Nulla iaculis turpis in nibh aliquam maximus. In dignissim arcu vel diam scelerisque, pretium urna </p>
