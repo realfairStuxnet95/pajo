@@ -9,7 +9,7 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span class="label label-success pull-right">2</span> <span> Dashboard </span> </a>
                     <ul class="list-unstyled">
-                        <li><a href="index.html">Dashboard 1</a></li>
+                        <li><a href="dashboard">Dashboard 1</a></li>
                         <li><a href="dashboard_2.html">Dashboard 2</a></li>
                     </ul>
                 </li>
