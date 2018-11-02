@@ -48,7 +48,7 @@
 
                     <!-- WORKS -->
                     <section class="wprt-section works parallax">
-                        <?php include 'App/Views/Home/featured_works.php'; ?>
+                        <?php //include 'App/Views/Home/featured_works.php'; ?>
                     </section>
 
                     <!-- WHY CHOOSE US -->

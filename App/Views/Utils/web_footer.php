@@ -21,15 +21,10 @@
                         <li class="style-2"><a href="#">About Us</a></li>
                         <li class="style-2"><a href="#">Mission and Values</a></li>
                         <li class="style-2"><a href="#">Products</a></li>
-                        <li class="style-2"><a href="#">Delivery Methods</a></li>
-                        <li class="style-2"><a href="#">Community</a></li>
-                        <li class="style-2"><a href="#">Safety</a></li>
-                        <li class="style-2"><a href="#">News & Events</a></li>
-                        <li class="style-2"><a href="#">Sustainability</a></li>
-                        <li class="style-2"><a href="#">FAQ</a></li>
-                        <li class="style-2"><a href="#">Portfolio</a></li>
+                        <li class="style-2"><a href="#">Request an Invoice</a></li>
                         <li class="style-2"><a href="#">Contact Us</a></li>
-                        <li class="style-2"><a href="#">Shop</a></li>
+                        <li class="style-2"><a href="#">Photo Gallery</a></li>
+                        <li class="style-2"><a href="#">News & Updates</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,15 +35,17 @@
                     <ul class="style-2">
                         <li class="address clearfix">
                             <span class="hl">Address:</span>
-                            <span class="text">1379 Shoreline Parkway, Mountain View, CA 94043, United States</span>
+                            <span class="text">
+                                Pajo Group Industries, Rugenge, Kigali.KG 7 Ave/RN3 and KG 3 Ave
+                            </span>
                         </li>
                         <li class="phone clearfix">
                             <span class="hl">Phone:</span> 
-                            <span class="text">+1 718-999-3939</span>
+                            <span class="text">+250 788307212</span>
                         </li>
                         <li class="email clearfix">
                             <span class="hl">E-mail:</span>
-                            <span class="text">contact@construction.com</span>
+                            <span class="text">pajogroup@gmail.com</span>
                         </li>
                     </ul>
                 </div>
@@ -60,10 +57,8 @@
                 <div class="widget widget_socials">
                     <div class="socials">
                         <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                        <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                        <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
-                        <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                        <a target="_blank" href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="https://www.facebook.com/pajogroup/" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -77,15 +72,15 @@
         <div class="bottom-bar-inner-wrap">
         
             <div class="bottom-bar-content">
-                <div id="copyright">CONSTRUCTION TEMPLATE &copy; DESIGN BY BLOGWP.
+                <div id="copyright">&copy; Copyright <?php echo date('Y'); ?> All right Reserved to Pajo Group 
                 </div><!-- /#copyright -->
             </div><!-- /.bottom-bar-content -->
 
             <div class="bottom-bar-menu">
                 <ul class="bottom-nav">
-                    <li><a href="#/">HISTORY</a></li>
-                    <li><a href="#/">FAQ</a></li>
-                    <li><a href="#/">EVENTS</a></li>
+                    <li><a href="#/">About Us</a></li>
+                    <li><a href="#/">Contact Us</a></li>
+                    <li><a href="#/">Get Invoice</a></li>
                 </ul>       
             </div><!-- /.bottom-bar-menu -->
         </div>

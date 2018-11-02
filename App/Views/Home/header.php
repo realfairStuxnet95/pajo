@@ -21,7 +21,7 @@
                 <i class="fa fa-phone-square"></i>+250788307212
                 <i class="fa fa-envelope"></i>pajogroup@gmail.com
                 <i class="fa fa-clock-o"></i>Mon-Fri: 7:00 - 17:00
-            </span><!-- /#top-bar-text -->
+            </span>
         </div><!-- /.top-bar-content -->
     </div>
 </div>
@@ -53,7 +53,7 @@
                     </ul>
                 </li>
                 <li class="menu-item">
-                    <a href="#">Products</a>
+                    <a href="products">Products</a>
                 </li>
                 <li class="menu-item"><a href="#">News &amp; Updates</a></li>
                 <li class="menu-item"><a href="#">Contact Us</a></li>

@@ -20,8 +20,12 @@
                                     <img src="assets/img/projects/1.jpg" alt="image" />
                                     <figcaption>
                                         <div>
-                                            <h2><a target="_blank" href="page-project-detail.html">LUXURY BUILDINGS</a></h2>
-                                            <p>Construction</p>
+                                            <h2>
+                                                <a target="_blank" href="#">
+                                                    INTERIOR DESIGN
+                                                </a>
+                                            </h2>
+                                            <p>Pajo Group</p>
                                         </div>
                                     </figcaption>           
                                 </figure>
@@ -41,7 +45,8 @@
                                     <img src="assets/img/projects/2.jpg" alt="image" />
                                     <figcaption>
                                         <div>
-                                            <h2><a target="_blank" href="page-project-detail-2.html">LUXURY BUILDINGS</a></h2>
+                                            <h2><a target="_blank" href="#">
+                                            General Civil Engineering</a></h2>
                                             <p>Construction</p>
                                         </div>
                                     </figcaption>           
