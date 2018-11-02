@@ -1,3 +1,6 @@
 RewriteEngine on
 RewriteRule ^home$ index.php [NC,L]
 RewriteRule ^products$ our_products.php [NC,L]
+RewriteRule ^news$ news_blog.php [NC,L]
+RewriteRule ^contact$ contact_web.php [NC,L]
+RewriteRule ^email_us$ includes/contact/contact-process.php [NC,L]

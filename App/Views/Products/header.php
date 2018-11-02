@@ -1,5 +1,9 @@
-
-<div id="site-header-wrap">
+<?php 
+    $firstIndex = strripos($_SERVER["REQUEST_URI"], "/");
+    $string=$_SERVER["REQUEST_URI"];
+    $query=substr($string,$firstIndex+1,strlen($string));
+?>
+<div id="site-header-wrap" style="box-shadow: 3px 3px 3px #ccc;position: fixed;z-index: 2;width: 100%;">
 <!-- Top Bar -->
 <div id="top-bar" class="style-2">
     <div id="top-bar-inner" class="container">
@@ -26,21 +30,18 @@
             </div><!-- /.top-bar-content -->
         </div>
     </div>
-</div><!-- /#top-bar -->
-
-<!-- Header -->
-<header id="site-header" class="header-front-page style-1" style="border-bottom: 2px solid #ccc;">
+</div>
+<header id="site-header" class="header-front-page style-1" style="">
     <div id="site-header-inner" class="container">
         <div class="wrap-inner">          
             <div id="site-logo" class="clearfix">
                 <div id="site-logo-inner">
-                    <a href="home-slider-full-screen.html" title="Construction" rel="home" class="main-logo">
-                        <img src="assets/img/pajo.png" alt="Construction" data-retina="assets/img/logo@2x.png" data-width="204" data-height="30">
+                    <a href="home" title="Construction" rel="home" class="main-logo">
+                        <img src="assets/img/products/logo.png" alt="Pajo Group" data-retina="assets/img/logo@2x.png" data-width="204" data-height="30">
                     </a>
                 </div>
-            </div><!-- /#site-logo -->
-
-            <div class="mobile-button"><span></span></div><!-- //mobile menu button -->
+            </div>
+            <div class="mobile-button"><span></span></div>
 
             <nav id="main-nav" class="main-nav">
                 <ul class="menu">
@@ -55,11 +56,27 @@
                             <li class="menu-item"><a href="#">Services</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item current-menu-item">
+                    <li class="menu-item <?php 
+                        if($query=="products"){
+                            echo 'current-menu-item';
+                        }
+                     ?>">
                         <a href="products">Products</a>
                     </li>
-                    <li class="menu-item"><a href="#">News & Updates</a></li>
-                    <li class="menu-item"><a href="#">Contact</a></li>
+                    <li class="menu-item <?php 
+                        if($query=="news"){
+                            echo 'current-menu-item';
+                        }
+                     ?>">
+                        <a href="news">News & Updates</a>
+                    </li>
+                    <li class="menu-item <?php 
+                        if($query=="contact"){
+                            echo 'current-menu-item';
+                        }
+                     ?>">
+                        <a href="contact">Contact</a>
+                    </li>
                 </ul>
             </nav><!-- /#main-nav -->
 
@@ -73,6 +90,6 @@
                 </form>
             </div>
         </div>
-    </div><!-- /#site-header-inner -->
-</header><!-- /#site-header -->
+    </div>
+</header>
 </div>

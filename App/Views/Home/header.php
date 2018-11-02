@@ -55,7 +55,7 @@
                 <li class="menu-item">
                     <a href="products">Products</a>
                 </li>
-                <li class="menu-item"><a href="#">News &amp; Updates</a></li>
+                <li class="menu-item"><a href="news">News &amp; Updates</a></li>
                 <li class="menu-item"><a href="#">Contact Us</a></li>
                 <li class="menu-item">
                     <a class="invoice_btn" href="#" style="padding: 2px 3px 4px 5px;background:#FEBB17;border-radius: 10px;color: #fff;">Request Invoice</a>

@@ -1,6 +1,5 @@
 <?php
-define( "WEBMASTER_EMAIL", 'your-email@domain.com' );
-
+require 'Class.inc.php';
 $error = false;
 $fields = array( 'name', 'email', 'subject', 'message' );
 
@@ -14,13 +13,10 @@ if ( ! $error ) {
 	$email = trim( $_POST['email'] );
 	$subject = stripslashes( $_POST['subject'] );
 	$message = stripslashes( $_POST['message'] );
+	$mail = new mail();
+	$mail_status=$mail->send($email, $subject, $message);
 
-	$mail = @mail( WEBMASTER_EMAIL, $subject, $message,
-		 "From: " . $name . " <" . $email . ">\r\n"
-		."Reply-To: " . $email . "\r\n"
-		."X-Mailer: PHP/" . phpversion() );
-
-	if ( $mail ) {
+	if ($mail_status) {
 		echo "Success";
 	} else {
 		echo "Error";

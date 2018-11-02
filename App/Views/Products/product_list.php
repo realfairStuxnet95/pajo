@@ -14,7 +14,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 
@@ -33,7 +35,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 
@@ -52,7 +56,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 
@@ -71,7 +77,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 
@@ -90,7 +98,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 
@@ -109,7 +119,9 @@
                 </span>
             </a>
 
-            <a href="#" class="add_to_cart_button">Add to cart</a>
+            <a href="#" class="add_to_cart_button">
+                REQUEST INVOICE
+            </a>
         </div>
     </li>
 </ul>

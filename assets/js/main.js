@@ -108,8 +108,6 @@
 
             // Run on Window Load
             self.config.$window.on( 'load', function() {
-                // Google Map
-                self.googleMap();
 
                 // Parallax
                 self.parallax();
@@ -875,9 +873,9 @@
                                 },
                                 success: function( msg ) {
                                     var result, cls;
-
+                                    alert(msg);
                                     if ( msg == 'Success' ) {
-                                        result = 'Your message has been sent. Thank you!';
+                                        result = 'Your message has been sent. Thank you! We will reach you as soon as Possible';
                                         cls = 'success';
                                     } else {
                                         result = 'Error sending email.';
@@ -939,31 +937,6 @@
                 }, 100);
             });
         },
-
-        googleMap: function() {
-            if ( $().gmap3 ) {
-                var contentString = '<div id="content">'+
-                    '<div style="max-width: 300px;">'+
-                    '<h3>YOUR COMPANY</h3>'+
-                    '<p>Cras id justo eget sapien scelerisque. Vivamus pretium at condimentum porta. Phasellus mollis mauris dolor, a tincidunt mauris fringilla.' +
-                    '</p>'+
-                    '</div>';
-                $('#gmap')
-                .gmap3({
-                    center: [11.535478, 106.890631],
-                    zoom: 14,
-                    scrollwheel: false
-                })
-                .infowindow({
-                    position: [11.537034, 106.890167],
-                    content: contentString
-                })
-                .then(function (infowindow) {
-                    infowindow.open(this.get(0));
-                });
-            }
-        },
-
     }; // end wprtTheme
 
     // Start things up
