@@ -26,9 +26,6 @@ require_once $root_url.'/App/Views/Users/header.php';
         include $root_url.'/App/Views/Utils/sidebar.php';
         ?>
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
                     <h3 class="text-themecolor">Available System Users</h3>
@@ -73,9 +70,6 @@ require_once $root_url.'/App/Views/Users/header.php';
             require_once $root_url.'/App/Views/Utils/footer.php';
             ?>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
     </div>
     <?php 
     require $root_url.'/App/Views/Users/scripts.php';

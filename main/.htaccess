@@ -20,3 +20,5 @@ RewriteRule ^reports$ system_report.php [NC,L]
 RewriteRule ^suppliers$ system_suppliers.php [NC,L]
 
 RewriteRule ^invoice$ system_invoice.php [NC,L]
+
+RewriteRule ^save_data$ App/Views/Admin/save_data.php [NC,L]

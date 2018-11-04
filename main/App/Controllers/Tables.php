@@ -19,6 +19,9 @@ class Tables{
 	public function suppliers(){
 		return 'suppliers';
 	}
+	public function user_types(){
+		return 'user_types';
+	}
 }
 $table=new Tables();
 ?>

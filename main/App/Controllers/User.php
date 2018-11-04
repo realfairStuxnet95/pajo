@@ -45,16 +45,16 @@ class User extends Execute{
 		$result=$this->query_update(Tables::users(),$where,$array);
 		return $result;
 	}
+	//user categories
+	public function get_users_type(){
+		$query="SELECT * FROM ".Tables::user_types()." ORDER BY type_id DESC";
+		return $this->selecting($query);
+	}
 	//saved user information
 	public function save_user($names,$email,$phone,$password,$category,$gender){
-		$array=array("names"=>$names,"email"=>$email,"password"=>$password,"type"=>$category,"status"=>'ACTIVE',"gender"=>$gender,"verified"=>1,"phone"=>$phone);
-		$status=$this->multi_insert(Tables::users(),$array);
-		return $status;
-	}
-	public function save_supplier($names,$email,$phone,$tin,$address){
-		$array=array("names"=>$names,"email"=>$email,"phone"=>$phone,"tin"=>$tin,"address"=>$address,"status"=>'ACTIVE');
-		$status=$this->multi_insert(Tables::suppliers(),$array);
-		return $status;
+		$query="INSERT INTO system_users(names,email,password,phone,user_type,status)
+				VALUES (\"$names\",\"$email\",\"$password\",\"$phone\",\"$category\",'ACTIVE')";
+		return $this->inserting($query);
 	}
 }
 $user=new User();

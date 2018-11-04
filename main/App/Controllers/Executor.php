@@ -183,5 +183,15 @@ class Execute extends Query{
 		$num=$this->rows($con,$query);
 		return $num;
 	}
+	// new functions implemented +++++++++++++++++++++++++++++++++++++++++++++++++
+	public function selecting($query){
+		return $this->select($query);
+	}
+	public function updating($query){
+		return $this->update($query);
+	}
+	public function inserting($query){
+		return $this->insert($query);
+	}
 }
 ?>

@@ -82,4 +82,4 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="js/category/index.js"></script>
+    <script src="js/data/index.js"></script>

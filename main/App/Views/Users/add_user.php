@@ -54,10 +54,20 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="control-label">User Category</label>
-                            <select name="category" class="form-control custom-select" required>
-                                <option value="ADMIN">Administrator</option>
-                                <option value="FINANCE">FINANCE</option>
-                                <option value="STOCK">Stock Manager</option>
+                            <?php 
+                            $users_type=$user->get_users_type();
+                            // var_dump($users_type);
+                            ?>
+                            <select id="category" name="category" class="form-control custom-select" required>
+                                <?php 
+                                foreach ($users_type as $key => $value) {
+                                   ?>
+                                   <option value="<?php echo $value['type_id']; ?>">
+                                       <?php echo $value['type']; ?>
+                                   </option>
+                                   <?php
+                                }
+                                ?>
                             </select>
                         </div>
                     </div>

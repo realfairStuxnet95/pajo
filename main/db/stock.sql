@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2018 at 11:27 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Nov 04, 2018 at 10:31 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -29,9 +29,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `inventory` (
-  `record_id` int(100) NOT NULL,
-  `product_id` int(100) NOT NULL,
-  `quantity` int(100) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `type` varchar(200) NOT NULL,
+  `quantity` varchar(50) NOT NULL,
+  `expire_date` varchar(255) NOT NULL,
+  `mfd_date` varchar(255) NOT NULL,
+  `unit_price` decimal(10,0) NOT NULL,
+  `selling_price` varchar(10) NOT NULL,
   `status` varchar(50) NOT NULL,
   `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -40,113 +45,8 @@ CREATE TABLE `inventory` (
 -- Dumping data for table `inventory`
 --
 
-INSERT INTO `inventory` (`record_id`, `product_id`, `quantity`, `status`, `regDate`) VALUES
-(1, 3, 23, '', '2018-08-30 22:02:37'),
-(2, 3, 23, 'ACTIVE', '2018-08-30 22:03:27'),
-(3, 3, 23, 'ACTIVE', '2018-08-30 22:03:49'),
-(4, 3, 23, 'ACTIVE', '2018-08-30 22:03:52'),
-(5, 3, 23, 'ACTIVE', '2018-08-30 22:04:01'),
-(6, 5, 12, 'ACTIVE', '2018-08-30 22:07:28'),
-(7, 5, 12, 'ACTIVE', '2018-08-30 22:07:54'),
-(8, 5, 12, 'ACTIVE', '2018-08-30 22:08:32'),
-(9, 3, 5, 'ACTIVE', '2018-08-30 22:45:18'),
-(10, 3, 12, 'ACTIVE', '2018-08-30 23:27:05'),
-(11, 3, 12, 'ACTIVE', '2018-08-30 23:28:43'),
-(12, 3, 1, 'ACTIVE', '2018-08-30 23:34:09'),
-(13, 5, 12, 'ACTIVE', '2018-11-01 09:15:07'),
-(14, 4, 12, 'ACTIVE', '2018-11-01 09:18:28');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `inventory_logs`
---
-
-CREATE TABLE `inventory_logs` (
-  `log_id` int(100) NOT NULL,
-  `log_date` varchar(1024) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `activity` text NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `inventory_logs`
---
-
-INSERT INTO `inventory_logs` (`log_id`, `log_date`, `user_id`, `activity`, `status`, `regDate`) VALUES
-(1, '2018/08/31', 6, ' has added a new MDF to stock with quantity12', 'UNREAD', '2018-08-30 23:27:05'),
-(2, '2018/08/31', 6, ' has added a new MDF to stock with quantity 12', 'UNREAD', '2018-08-30 23:28:43'),
-(3, '2018/08/31', 6, 'John Karim has added a new MDF to stock with quantity 1', 'UNREAD', '2018-08-30 23:34:09'),
-(4, '2018/11/01', 6, 'John Karim has added a new MDF-DOOR to stock with quantity 12', 'UNREAD', '2018-11-01 09:15:07'),
-(5, '2018/11/01', 6, 'John Karim has added a new PLACARI to stock with quantity 12', 'UNREAD', '2018-11-01 09:18:28');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `items_categories`
---
-
-CREATE TABLE `items_categories` (
-  `category_id` int(100) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `unit_price` int(100) NOT NULL,
-  `image` varchar(1024) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `items_categories`
---
-
-INSERT INTO `items_categories` (`category_id`, `name`, `unit_price`, `image`, `status`, `regDate`) VALUES
-(3, 'MDF', 0, '537866900.PNG', 'ACTIVE', '2018-08-30 10:51:41'),
-(4, 'PLACARI', 0, '1321391218.jpg', 'ACTIVE', '2018-08-30 11:06:16'),
-(5, 'MDF-DOOR', 10000, '1056426144.jpg', 'ACTIVE', '2018-08-30 21:24:34');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `raw_materials`
---
-
-CREATE TABLE `raw_materials` (
-  `record_id` int(100) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `quantity` int(100) NOT NULL,
-  `supplier` varchar(1024) NOT NULL,
-  `unit_price` int(10) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `reg_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `suppliers`
---
-
-CREATE TABLE `suppliers` (
-  `supplier_id` int(100) NOT NULL,
-  `names` varchar(1024) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `tin` varchar(100) NOT NULL,
-  `address` text NOT NULL,
-  `phone` varchar(100) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `suppliers`
---
-
-INSERT INTO `suppliers` (`supplier_id`, `names`, `email`, `tin`, `address`, `phone`, `status`, `regDate`) VALUES
-(1, 'John Karim', 'sam@gmail.com', '123455', 'kigali', '1234567890', '', '2018-08-31 07:43:53'),
-(2, 'Nkusi Godfrey', 'nkusi@gmail.com', '122390', 'kigali/Rwanda', '0788998877', 'ACTIVE', '2018-08-31 07:45:18');
+INSERT INTO `inventory` (`id`, `name`, `type`, `quantity`, `expire_date`, `mfd_date`, `unit_price`, `selling_price`, `status`, `regDate`) VALUES
+(1, 'samuel', 'sam', '10', '12/12/22', '12/12/12', '1000', '1200', 'stocked', '2018-03-06 05:55:15');
 
 -- --------------------------------------------------------
 
@@ -193,8 +93,8 @@ CREATE TABLE `system_users` (
   `password` varchar(255) NOT NULL,
   `phone` int(100) NOT NULL,
   `type` varchar(100) NOT NULL,
+  `user_type` int(11) NOT NULL,
   `status` varchar(50) NOT NULL,
-  `gender` varchar(2) NOT NULL,
   `lastLogin` varchar(100) NOT NULL,
   `verified` int(2) NOT NULL,
   `isOnline` varchar(50) NOT NULL,
@@ -206,14 +106,9 @@ CREATE TABLE `system_users` (
 -- Dumping data for table `system_users`
 --
 
-INSERT INTO `system_users` (`user_id`, `user_code`, `names`, `email`, `password`, `phone`, `type`, `status`, `gender`, `lastLogin`, `verified`, `isOnline`, `isAdmin`, `regDate`) VALUES
-(1, 10001, 'Sugira samuel', 'sam@gmail.com', 'samuels', 123456789, 'ADMIN', 'ACTIVE', '', '', 1, 'NO', 1, '2018-08-23 10:34:33'),
-(2, 0, 'manikiza', 'sam@kiza.com', 'samuels', 0, 'ADMIN', 'DELETED', 'M', '', 1, '', 0, '2018-08-30 13:23:16'),
-(3, 0, 'manikiza', 'samuel@gmail.com', 'samuels', 0, 'ADMIN', 'DELETED', 'M', '', 1, '', 0, '2018-08-30 13:23:46'),
-(4, 0, 'sss', 'sam@kiza.com', 'samuels', 0, 'ADMIN', 'DELETED', 'M', '', 1, '', 0, '2018-08-30 13:24:52'),
-(5, 0, 'manikiza', 'sugira@gmail.com', 'samuels', 2147483647, 'FINANCE', 'ACTIVE', 'F', '', 1, '', 0, '2018-08-30 13:33:55'),
-(6, 0, 'John Karim', 'john@gmail.com', '123456', 2147483647, 'STOCK', 'ACTIVE', 'M', '', 1, '', 0, '2018-08-30 14:36:38'),
-(7, 0, 'radio Admin', 'info@radio1.rw', '123456', 2147483647, 'STOCK', 'ACTIVE', 'M', '', 1, '', 0, '2018-08-30 14:58:27');
+INSERT INTO `system_users` (`user_id`, `user_code`, `names`, `email`, `password`, `phone`, `type`, `user_type`, `status`, `lastLogin`, `verified`, `isOnline`, `isAdmin`, `regDate`) VALUES
+(1, 10001, 'Sugira samuel', 'sam@gmail.com', 'samuels', 0, 'ADMIN', 1, 'ACTIVE', '', 1, 'NO', 1, '2018-08-23 10:34:33'),
+(2, 0, 'john', 'john@pajo.com', '123456', 789564123, '', 5, 'ACTIVE', '', 0, '', 0, '2018-11-04 14:21:34');
 
 -- --------------------------------------------------------
 
@@ -240,6 +135,32 @@ INSERT INTO `users` (`id`, `username`, `password`, `user_type`, `status`, `regDa
 (3, 'sam@gmail.com', '123456', '', '', '2018-08-23 08:15:04'),
 (4, 'sam@gmail.com', '123456', '', '', '2018-08-23 08:15:05');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_types`
+--
+
+CREATE TABLE `user_types` (
+  `type_id` int(100) NOT NULL,
+  `type` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `regDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_types`
+--
+
+INSERT INTO `user_types` (`type_id`, `type`, `description`, `status`, `regDate`) VALUES
+(1, 'ADMIN', '', 'ACTIVE', '2018-11-04 13:20:02'),
+(2, 'CHIEF', '', 'ACTIVE', '2018-11-04 13:20:02'),
+(3, 'PROCUREMENT', '', 'ACTIVE', '2018-11-04 13:20:34'),
+(4, 'PRODUCTION MANAGER', '', '4', '2018-11-04 13:20:49'),
+(5, 'STOCK MANAGER', '', 'ACTIVE', '2018-11-04 13:21:05'),
+(6, 'RECEPTIONIST', '', 'ACTIVE', '2018-11-04 13:21:30');
+
 --
 -- Indexes for dumped tables
 --
@@ -248,31 +169,7 @@ INSERT INTO `users` (`id`, `username`, `password`, `user_type`, `status`, `regDa
 -- Indexes for table `inventory`
 --
 ALTER TABLE `inventory`
-  ADD PRIMARY KEY (`record_id`);
-
---
--- Indexes for table `inventory_logs`
---
-ALTER TABLE `inventory_logs`
-  ADD PRIMARY KEY (`log_id`);
-
---
--- Indexes for table `items_categories`
---
-ALTER TABLE `items_categories`
-  ADD PRIMARY KEY (`category_id`);
-
---
--- Indexes for table `raw_materials`
---
-ALTER TABLE `raw_materials`
-  ADD PRIMARY KEY (`record_id`);
-
---
--- Indexes for table `suppliers`
---
-ALTER TABLE `suppliers`
-  ADD PRIMARY KEY (`supplier_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `system_logs`
@@ -299,6 +196,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user_types`
+--
+ALTER TABLE `user_types`
+  ADD PRIMARY KEY (`type_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -306,31 +209,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `record_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `inventory_logs`
---
-ALTER TABLE `inventory_logs`
-  MODIFY `log_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `items_categories`
---
-ALTER TABLE `items_categories`
-  MODIFY `category_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `raw_materials`
---
-ALTER TABLE `raw_materials`
-  MODIFY `record_id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `suppliers`
---
-ALTER TABLE `suppliers`
-  MODIFY `supplier_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `system_logs`
@@ -348,13 +227,19 @@ ALTER TABLE `system_settings`
 -- AUTO_INCREMENT for table `system_users`
 --
 ALTER TABLE `system_users`
-  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user_types`
+--
+ALTER TABLE `user_types`
+  MODIFY `type_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
